@@ -1,0 +1,48 @@
+   
+<mat-card >
+    <mat-card-header class="row">
+        <mat-card-title class="title" class="col-md-6" >
+            <p>Summary</p>
+        </mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="col justify-content-center">
+        <div class="row text-center">
+            <div class="col-4 ">
+                <p class="head">Total Unit</p>
+                <p class="value">{{TUnit}}</p>
+            </div>
+            <div class="col-4">
+                <p class="head">Sold Unit</p>
+                <p class="value">{{TSoldUnit}}</p>
+            </div>
+            <div class="col-4">
+                <p class="head">Total Investment</p>
+                <p class="value">Rs {{TotalInvestment|number : '1.2-2'}}</p>
+            </div>
+            <div class="w-100"></div>
+        </div>
+        
+        <div class="row text-center" >
+            <div class="col-4">
+                <p class="head">Current Value</p>
+                <p class="value">{{totalamt|number : '1.2-2'}}</p>
+            </div>
+            <div class="col-4">
+                <p class="head">Sold Value</p>
+                <p class="value">Rs {{TotalSoldValue| number : '1.2-2'}}</p>
+            </div>
+            <div class="col-4">
+                <p class="head">Profit/Loss</p>
+                <p class="value">Rs {{TotalProfitLoss| number : '1.2-2'}}</p>
+            </div>
+        </div>
+        <div class="row amt text-center">
+            <div class="col-12">
+                <p class="head">Total Receivable Amount</p>
+                <p class="value">Rs {{TotalSoldValue| number : '1.2-2'}}</p>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+

@@ -1,0 +1,63 @@
+
+<div class="container head-container">
+    <div class="row">
+        
+      <div class="col-sm-8">
+        
+        
+        
+      </div>
+      <div class="col-sm-4">
+        <div class="button-container">
+            <!-- <button type="button" class="btn btn-outline-primary"  >Add </button> -->
+            <button type="button" class="btn btn btn-outline-primary float-right m-2"
+                data-bs-toggle="modal" 
+                (click)="onCreate()"
+                data-bs-target="#exampleModal"
+                data-backdrop="static" data-keyboard="false" >
+                Add Transaction
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mat-elevation-z8 table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Date</th>
+                <th>Stock Name</th>
+                <th>Transaction Type</th>
+                <th>Quantity</th>
+                <th>Rate</th>
+                <!-- <th>Delete</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataitem of pageSlice">
+                <td>{{dataitem.TDate | date}}</td>
+                <!-- <td> <img src={{dataitem.ProfilePhoto}} height="100" width="100" alt=""></td> -->
+    
+                <td>{{dataitem.CName}}</td>
+    
+                <td>{{dataitem.TType}}</td>
+                <td>{{dataitem.TQty}}</td>
+                <td>{{dataitem.TRate}}</td>
+
+                <td>
+                 <!-- <button (click)="deleteClick(dataitem)">
+                     <mat-icon>delete</mat-icon>
+                 </button> -->
+                    
+                </td>
+            </tr>
+        </tbody>
+     </table>
+  <mat-paginator class="paginator" 
+                 [length]="this.TransactionList.length"
+                 [pageSize]=9
+                 [pageSizeOptions]="[9, 18, 36]"
+                 (page)="onPageChange($event)">
+  </mat-paginator>
+</div>
+  

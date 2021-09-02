@@ -1,0 +1,64 @@
+<form  class="form-container">
+    <mat-card >
+        <mat-card-header >
+            <mat-card-title>
+                Transaction Record
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="closeClick()" style="float: right;"></button>
+            </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="text-center">
+            <div class="row float-right">
+                <div class="col-md-6 mb-3 " >
+                    <mat-radio-group aria-label="Select an option">
+                        <mat-radio-button #sale  (change)="salechange(sale.value)" value="Sell"  name="TType">Sell</mat-radio-button>
+                        <mat-radio-button #buy  (change)="buychange(buy.value)" value="Buy"  name="TType">Buy</mat-radio-button>
+                    </mat-radio-group>
+                    <mat-radio-group aria-label="Select an option" *ngIf="activeBuyType" >
+                        <mat-radio-button #IPO  (change)="IPOchange(IPO.value)" value="Sell"  name="TType">IPO</mat-radio-button>
+                        <mat-radio-button #Secondary  (change)="Secondarychange(Secondary.value)" value="Buy"  name="TType">Secondary</mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input [(ngModel)]="CName" name="CName"value="{{displayAutoList}}" matInput type="text" [matAutocomplete]="auto"   placeholder="Stock Name">
+                        <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayAutoList">
+                            <mat-option *ngFor="let option of options" [value]="option" >
+                                    {{option.CName}}
+                            </mat-option>
+                        </mat-autocomplete>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="example-full-width" >
+                        <mat-label>Transaction date</mat-label>
+                        <input [(ngModel)]="TDate" name="TDate"  matInput [matDatepicker]="picker" (click)="picker.open()">
+                        <mat-datepicker #picker color="warn"></mat-datepicker>
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input type="number" [(ngModel)]="TQty"  name="TQty" matInput placeholder="Quantity">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="full-width">
+                        <input type="number" [(ngModel)]="TRate" name="TRate"  matInput placeholder="Rate">
+                    </mat-form-field>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <button mat-raised-button class="btn btn-primary float-right m-2" (click)="addTransaction()"> 
+                            save
+                    </button> 
+                </div>
+            </div>
+        </mat-card-content>
+    </mat-card>
+
+</form>

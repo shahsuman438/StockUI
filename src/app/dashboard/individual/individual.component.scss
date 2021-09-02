@@ -1,0 +1,25 @@
+@import "../summary/summary.component.scss";
+
+
+mat-card{
+    margin: 0;
+    padding-left: 1rem;
+    width: 100%;
+    background-color: aliceblue;
+    color: black;
+    border: 2px solid rgba(53, 77, 112, 0.774);
+    margin-bottom: 20px;
+}
+
+mat-card-header{
+    margin: 0;
+    padding: 0;
+    // background-color: aqua;
+    min-height: 90px;
+    display: inline-block;
+    
+    ::ng-deep .mat-card-title {
+        text-align: center;
+    }
+    
+}

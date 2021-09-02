@@ -1,0 +1,75 @@
+table {
+    width: 100%;
+  }
+  
+  .mat-form-field {
+    font-size: 14px; 
+    width: 100%;
+  }
+
+.table-container{
+    font-size: 15px;
+}
+
+.head-container{
+    width: 100%;
+    margin-top: 5px;
+    padding-bottom: 6px;
+    
+    
+}
+
+.button-container{
+  float: right;
+}
+
+.btn-outline-primary{
+    border: 2px solid rgb(38, 72, 112);
+    color: rgb(38, 72, 112);
+    &:hover{
+      background-color: rgb(38, 72, 112);
+      color: #fff;
+     
+    }
+}
+.btn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.paginator{
+  background-color: rgb(38, 72, 112) ;
+}
+
+
+mat-dialog-container{
+  background-color: red;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: rgb(38, 72, 112) !important;
+ }
+
+ ::ng-deep.mat-form-field-underline {
+  /*change color of underline*/
+  background-color: rgb(38, 72, 112) !important;
+} 
+
+::ng-deep.mat-form-field-ripple {
+ /*change color of underline when focused*/
+ background-color: rgb(38, 72, 112) !important;;
+}
+
+::ng-deep .ng-star-inserted{
+  color: rgb(38, 72, 112);
+}
+
+::ng-deep .mat-option-text{
+  color: #fff;
+}
+
+::ng-deep .mat-option{
+  background-color: rgb(38, 72, 112);
+}
+

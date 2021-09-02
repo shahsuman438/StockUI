@@ -1,0 +1,54 @@
+<div class="container-fluid page">
+    <div class="page__box p-3 mt-2">Available Stock</div>
+    <div class="page__content shadow p-3 position-relative ">
+        
+<div class="container head-container">
+    <div class="row">
+        
+      <div class="col-sm-8">
+        
+        
+        
+      </div>
+      <div class="col-sm-4">
+        <div class="button-container">
+            <!-- <button type="button" class="btn btn-outline-primary"  >Add </button> -->
+            
+        </div>
+      </div>
+    </div>
+  </div>
+<div class="mat-elevation-z8 table-container">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Stock Name</th>
+                <th>Avlable Unit</th>
+                <th>Sold Unit</th>
+                <th>Sold Value</th>
+                <th>Total Investment</th>
+                <th>Profit/Loss</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let dataitem of CompList">
+                <td>{{dataitem.CSymbol}}</td>
+                <td>{{dataitem.CName}}</td>
+                <td>{{dataitem.CQty}}</td>
+                <td>{{dataitem.SoldUnit}}</td>
+                <td>{{dataitem.SoldValue}}</td>
+                <td>{{dataitem.CInvestment}}</td>
+                <td>{{dataitem.ProfitLoss}}</td>
+
+                <td>   
+                </td>
+            </tr>
+        </tbody>
+     </table>
+  
+</div>
+  
+    </div>
+</div>
